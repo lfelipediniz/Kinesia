@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { X, Check, ArrowLeft, AlertTriangle } from "lucide-react";
@@ -14,8 +13,10 @@ const Exercise = () => {
   const [progress, setProgress] = useState(0);
   const [quality, setQuality] = useState(0);
   const [exerciseTime, setExerciseTime] = useState(0);
-  
-  // Simulate exercise analysis with changing feedback
+
+  // Nome do exercício, usado para montar o path do GIF
+  const exerciseName = "agachamento";
+
   useEffect(() => {
     const feedbackCycle = [
       { type: "neutral", message: "Posicione-se para começar" },
@@ -28,30 +29,22 @@ const Exercise = () => {
     ];
     
     let currentIndex = 0;
-    
     const interval = setInterval(() => {
       const feedback = feedbackCycle[currentIndex % feedbackCycle.length];
       setFeedbackType(feedback.type as FeedbackType);
       setFeedbackMessage(feedback.message);
       currentIndex += 1;
-      
-      // Update progress
       setProgress(prev => Math.min(prev + 12, 100));
-      
-      // Update quality score based on feedback
       setQuality(prev => {
         const change = feedback.type === "correct" ? 2 : feedback.type === "warning" ? -1 : 0;
         return Math.min(Math.max(prev + change, 0), 100);
       });
-      
-      // Update exercise time (in seconds)
       setExerciseTime(prev => prev + 2);
-      
     }, 2000);
-    
+
     return () => clearInterval(interval);
   }, []);
-  
+
   const handleEndExercise = () => {
     navigate("/feedback", { 
       state: { 
@@ -69,11 +62,11 @@ const Exercise = () => {
         <button onClick={() => navigate('/dashboard')}>
           <ArrowLeft size={20} />
         </button>
-        <h1 className="text-lg font-medium">Agachamento</h1>
-        <div className="w-5"></div> {/* Empty div for alignment */}
+        <h1 className="text-lg font-medium capitalize">{exerciseName}</h1>
+        <div className="w-5" />
       </div>
       
-      {/* Exercise timer */}
+      {/* Exercise timer & quality */}
       <div className="p-4 flex justify-between">
         <div>
           <p className="text-gray-400 text-sm">Tempo</p>
@@ -88,6 +81,15 @@ const Exercise = () => {
       {/* Progress bar */}
       <div className="px-4 mb-4">
         <Progress value={progress} className="h-2 bg-gray-800" />
+      </div>
+
+      {/* GIF do exercício */}
+      <div className="px-4 mb-6 flex justify-center">
+        <img
+          src={`/exercises/${exerciseName}.gif`}
+          alt={`Demonstração de ${exerciseName}`}
+          className="w-64 h-64 object-contain rounded-lg shadow-lg"
+        />
       </div>
       
       {/* Main feedback area */}
