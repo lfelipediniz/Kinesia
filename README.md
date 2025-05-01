@@ -20,7 +20,7 @@ A minimalist mobile application that uses smartphone hardware and artificial int
 
 Kinesia is a mobile-first fitness application that leverages smartphone hardware (accelerometers, gyroscopes) and artificial intelligence to analyze motion and provide real-time feedback during resistance exercises. Its goal is to help users train more safely and efficiently by automatically detecting posture deviations, identifying execution quality, and offering corrective suggestions — without the need for wearables or cameras.
 
-Built with React and deployed as a native app using Capacitor, Kinesia features a streamlined, black-and-white minimalist interface optimized for clarity and focus.
+Built with React and deployed as a native app using Capacitor, Kinesia features a streamlined.
 
 
 ## Requirements
@@ -36,7 +36,7 @@ Built with React and deployed as a native app using Capacitor, Kinesia features 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/seu-usuario/kinesia.git
+   git clone https://github.com/lfelipediniz/Kinesia.git
    cd kinesia
    ```
 
