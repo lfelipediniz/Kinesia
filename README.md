@@ -25,7 +25,7 @@ Built with React and deployed as a native app using Capacitor, Kinesia features 
 
 ## Requirements
 
-- [Node.js (v18+ recommended)](https://nodejs.org/)
+- [Node.js (v22+ recommended)](https://nodejs.org/)
 - [pnpm (preferred) or npm](https://pnpm.io/installation)
 - [Java 17 (OpenJDK)](https://openjdk.org/projects/jdk/17/)
 - [Android SDK (via Android Studio or command line)](https://developer.android.com/studio)
