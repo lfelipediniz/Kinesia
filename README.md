@@ -1,6 +1,6 @@
 # Kinesia
 <p align="center">
-  <img src="/public/kinesia-logo.png" alt="Kinesia Logo" width="150">
+  <img src="/public/favicon.ico" alt="Kinesia Logo" width="150">
 </p>
 A minimalist mobile application that uses smartphone hardware and artificial intelligence to analyze movement, correct posture, prevent injuries and track performance during resistance training: delivering real-time feedback with no external sensors.
 
